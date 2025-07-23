@@ -2,7 +2,6 @@ FROM oven/bun AS build
 WORKDIR /app
 # Cache packages installation
 COPY package.json package.json
-COPY bun.lock bun.lock
 RUN bun install
 COPY ./src ./src
 COPY tsconfig.json tsconfig.json
