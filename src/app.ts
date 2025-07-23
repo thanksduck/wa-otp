@@ -9,6 +9,10 @@ export const app = new Elysia({
   .use(
     swagger({
       documentation: {
+        info: {
+          title: "Documentation for Wa-OTP API",
+          version: "0.0.1",
+        },
         tags: [
           {
             name: "OTP",
