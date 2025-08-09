@@ -4,13 +4,15 @@
   "scripts": {
     "build": "bun build ./src/index.ts --outdir --compile --minify ./dist --target bun",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "play":"bun ./src/play.ts",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
-    "@elysiajs/bearer": "^1.3.0",
+    "@elysiajs/bearer": "latest",
     "@elysiajs/cors": "latest",
     "@elysiajs/swagger": "latest",
-    "elysia": "latest"
+    "elysia": "latest",
+    "firebase-admin": "latest"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.0",

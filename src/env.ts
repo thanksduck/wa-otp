@@ -15,3 +15,12 @@ export const PORT = env.PORT ?? 3000;
 export const WA_PHONE_NUMBER_ID = env.WA_PHONE_NUMBER_ID || "";
 export const WHATSAPP_TOKEN = env.WHATSAPP_TOKEN || "";
 export const TOKEN = env.TOKEN || "";
+
+/** Firebase environment variables */
+export const FIREBASE_PROJECT_ID = env.FIREBASE_PROJECT_ID || "";
+export const FIREBASE_CLIENT_EMAIL = env.FIREBASE_CLIENT_EMAIL || "";
+export const FIREBASE_PRIVATE_KEY = env.FIREBASE_PRIVATE_KEY || "";
+
+/**Bank Verification related varaibles */
+export const CLIENT_ID = env.CLIENT_ID || "";
+export const PUBLIC_KEY = env.PUBLIC_KEY || "";

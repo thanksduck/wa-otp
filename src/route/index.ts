@@ -15,7 +15,9 @@ export const apiRouter = new Elysia({
 })
   .use(bearer())
   .onBeforeHandle(({ bearer, status }) => {
-    if (typeof bearer !== "string") return status(401, "Unauthorized");
-    if (bearer !== TOKEN) return status(401, "Unauthorized");
+    if (typeof bearer !== "string")
+      return status(401, "Unauthorized, due to bad type");
+    if (bearer !== TOKEN)
+      return status(401, "Unauthorized due to token mismatch");
   })
   .use(mainController);
