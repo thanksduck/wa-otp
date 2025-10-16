@@ -39,7 +39,7 @@ export const app = new Elysia({
   .use(
     cors({
       allowedHeaders: "*",
-      origin: true,
+      origin: ["*"],
     }),
   )
   .decorate("poweredBy", "elysia-by-sivam")
