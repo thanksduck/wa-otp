@@ -8,12 +8,12 @@ import { waService } from "@/lib/wa-service";
 
 export const otpController = new Elysia({
   name: "otp_controller",
-  prefix: "otp",
+  prefix: "/otp",
   detail: {
     tags: ["OTP"],
   },
 }).post(
-  "",
+  "/",
   async ({ body, status }) => {
     const { code, mobile } = body;
     try {

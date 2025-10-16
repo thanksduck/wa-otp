@@ -8,13 +8,13 @@ import {
 
 export const notifyController = new Elysia({
   name: "notify_controller",
-  prefix: "notify",
+  prefix: "/notify",
   detail: {
     description: "API to send push notification with FCM token",
     tags: ["Notification API"],
   },
 }).post(
-  "",
+  "/",
   async ({ status, body }) => {
     try {
       const data = await notifyService.notifyMultiple(body);

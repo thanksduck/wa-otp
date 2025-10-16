@@ -4,14 +4,7 @@ import { mainController } from "@/controller";
 import { TOKEN } from "@/env";
 export const apiRouter = new Elysia({
   name: "api_router",
-  prefix: "api",
-  detail: {
-    security: [
-      {
-        bearerAuth: [],
-      },
-    ],
-  },
+  prefix: "/api",
 })
   .use(bearer())
   .onBeforeHandle(({ bearer, status }) => {

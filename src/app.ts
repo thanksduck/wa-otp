@@ -36,7 +36,11 @@ export const app = new Elysia({
       200: t.Literal("healthy"),
     },
   })
-  .use(cors())
+  .use(
+    cors({
+      allowedHeaders: "*",
+    }),
+  )
   .decorate("poweredBy", "elysia-by-sivam")
   .onRequest(({ set }) => {
     set.headers["X-Powered-By"] = "elysia-by-sivam";
