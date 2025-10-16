@@ -2,7 +2,7 @@
   "name": "payment",
   "version": "1.0.50",
   "scripts": {
-    "build": "bun build ./src/index.ts --outdir --compile --minify ./dist --target bun",
+    "build": "bun build --outfile server.js --minify --target bun ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "play": "bun ./src/play.ts",
     "dev": "bun run --watch src/index.ts",
@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@elysiajs/bearer": "latest",
-    "@elysiajs/cors": "latest",
     "@elysiajs/swagger": "latest",
     "elysia": "latest",
     "firebase-admin": "latest"

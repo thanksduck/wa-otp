@@ -1,4 +1,3 @@
-import cors from "@elysiajs/cors";
 import swagger from "@elysiajs/swagger";
 import Elysia, { t } from "elysia";
 import { apiRouter } from "./route";
@@ -36,16 +35,15 @@ export const app = new Elysia({
       200: t.Literal("healthy"),
     },
   })
-  .use(
-    cors({
-      allowedHeaders: "*",
-      origin: ["*"],
-    }),
-  )
   .decorate("poweredBy", "elysia-by-sivam")
   .onRequest(({ set }) => {
     set.headers["X-Powered-By"] = "elysia-by-sivam";
     set.headers["X-Content-Type-Options"] = "nosniff";
     set.headers["X-Frame-Options"] = "DENY";
+
+    // set.headers["access-control-allow-credentials"] = "true";
+    // set.headers["access-control-allow-headers"] = "*";
+    // set.headers["access-control-allow-methods"] = "*";
+    // set.headers["access-control-allow-origin"] = "*";
   })
   .use(apiRouter);
